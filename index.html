@@ -17,21 +17,20 @@
 
     .dida {
       margin-left: 2em;
-     
     }
 
- .text {
-    margin-left: 15px; 
-  color: black;
-  font-size: 12px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+    .text {
+      margin-left: 15px; 
+      color: black;
+      font-size: 12px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
 
     img {
       display: block;
@@ -72,9 +71,10 @@
 </div>
 
 <script>
-  const sillabeInizio = ["tra", "gra", "pro", "sca", "fro", "lu", "vi", "cla", "sta", "ri", "mi", "no", "fi", "gi", "pa", "re", "to", "co", "po"];
-  const sillabeMedio = ["la", "na", "ro", "ve", "ne", "ta", "li", "so", "fa", "mo", "ce", "do", "lo", "za", "chi", "gi", "fu", "cu"];
-  const finali = ["ino", "ello", "one", "etto", "are", "ile", "ato", "ano", "ese", "olo", "uto", "ace", "ondo", "esco", "osto"];
+  // Aggiunto più sillabe per aumentare le combinazioni
+  const sillabeInizio = ["tra", "gra", "pro", "sca", "fro", "lu", "vi", "cla", "sta", "ri", "mi", "no", "fi", "gi", "pa", "re", "to", "co", "po", "lo", "fa", "ma", "zi", "bu", "ci", "te", "se", "be"];
+  const sillabeMedio = ["la", "na", "ro", "ve", "ne", "ta", "li", "so", "fa", "mo", "ce", "do", "lo", "za", "chi", "gi", "fu", "cu", "tu", "pe", "me", "te", "li", "ri", "si", "ve", "mo", "da"];
+  const finali = ["ino", "ello", "one", "etto", "are", "ile", "ato", "ano", "ese", "olo", "uto", "ace", "ondo", "esco", "osto", "ira", "ari", "ozo", "zino", "uno", "tau", "llo", "vola", "pia", "duro"];
 
   function generaParola() {
     let parola = sillabeInizio[Math.floor(Math.random() * sillabeInizio.length)];
