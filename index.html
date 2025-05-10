@@ -17,8 +17,21 @@
 
     .dida {
       margin-left: 2em;
-      font-family: "Times New Roman", Times, serif;
+     
     }
+
+ .text {
+    margin-left: 15px; 
+  color: black;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
     img {
       display: block;
@@ -28,23 +41,13 @@
       margin-left: 2em;
     }
 
-    .text {
-      margin-left: 15px;
-      color: black;
-      font-size: 12px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-
     #parola {
       font-family: "Times New Roman", Times, serif;
       text-align: left;
-      font-size: 24px;
-      
+      font-size: 16px;  /* Nome pesce più piccolo */
+      font-weight: normal; /* Non in grassetto */
       margin-top: 20px;
+      margin-left: 2em; /* Allineato a sinistra con l'immagine */
     }
   </style>
 </head>
@@ -57,13 +60,12 @@
       <a href="https://matteogatti.tumblr.com">back</a>
     </p>
 
+    <!-- Titolo allineato a sinistra con dimensione più piccola -->
     <p class="dida"><strong>Non sapevamo come chiamare il pesce rosso e quindi alla fine cambia nome ogni secondo</strong></p>
-
 
     <p><img src="https://64.media.tumblr.com/959802b6c07a6631729e97e06f38b257/tumblr_inline_sw1akjrnTt1rb1m2f_1280.jpg" alt="Pesce rosso" width="800" class="center responsive" /></p>
 
-
-    <!-- Nome che cambia -->
+    <!-- Nome del pesce che cambia ogni secondo, allineato con l'immagine -->
     <div id="parola">Caricamento nome...</div>
 
   </div>
