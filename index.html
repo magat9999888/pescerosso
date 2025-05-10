@@ -1,71 +1,81 @@
+
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-          "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
+          "http://www.w3.org/TR/html4/loose.dtd"><html>
+  <head>
+  
   <style type="text/css">
-    body {
-      background-color: white;
-      color: black;
-      font-family: "Times New Roman", Times, serif;
+  
+  /* custom mouse pointer */
+ a{
+        cursor: url("https://64.media.tumblr.com/36dcc744ff2bd1b60f4961129c5f8b44/tumblr_inline_qfkny01Usu1rb1m2f_500.png"), default;
+    }
+  
+  
+        .sticky {
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        top: 50%;
+        float:right;
+        margin-right:1em;
+        
     }
 
-    a {
-      cursor: url("https://64.media.tumblr.com/36dcc744ff2bd1b60f4961129c5f8b44/tumblr_inline_qfkny01Usu1rb1m2f_500.png"), default;
-      color: black;
-    }
-
-    .sticky {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 50%;
-      float: right;
-      margin-right: 1em;
-    }
-
-    .dida {
+.dida {
       margin-left: 2em;
+   
     }
 
-    .text {
-      margin-left: 15px;
-      font-size: 12px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-
-    img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-      margin-left: 2em;
-    }
-
-    #parola {
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-left: 2em;
+}
+  .text {
+    margin-left: 15px; 
+  color: black;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+  #parola {
       text-align: left;
       font-size: 16px;
       font-weight: normal;
       margin-top: 20px;
       margin-left: 2em;
     }
-  </style>
-</head>
-<body>
+  
 
-<div class="row">
+</style>
+
+  </head>
+  <body>
+
+
+<!-- Photo Grid -->
+<div class="row"> 
   <div class="column">
-    <p class="sticky">
-      <a href="https://matteogatti.tumblr.com">back</a>
-    </p>
 
-    <p class="dida"><strong>Non sapevamo come chiamare il pesce rosso e quindi alla fine cambia nome ogni secondo</strong></p>
+<p class="sticky"> <a href="https://matteogatti.tumblr.com" >back</a></p>
 
-    <p><img src="https://64.media.tumblr.com/959802b6c07a6631729e97e06f38b257/tumblr_inline_sw1akjrnTt1rb1m2f_1280.jpg" alt="Pesce rosso" width="800" class="center responsive" /></p>
+<p class="dida"><strong>pandemic holidays</strong></p><p class="dida">pencil drawing on plexyglass tripode / 40 x 40 x 40 cm / 2020</p>
 
-    <div id="parola">Caricamento nome...</div>
+<p><img src="https://64.media.tumblr.com/0dc49d2f3ff724044871e04b125a4e04/tumblr_inline_qffk1uWm3k1rb1m2f_1280.jpg"  width="800"  class="center" class="responsive" /></p>
+
+<p><img src="https://64.media.tumblr.com/66496eee8c8fcded63fcd65315298c3b/tumblr_inline_qffk30SNQe1rb1m2f_1280.jpg" width="600"class="center" class="responsive" /></p>
+
+<p><img src="https://64.media.tumblr.com/46bcd737fa4af859a2129238ce32d4fe/tumblr_inline_qfib70dAxH1rb1m2f_1280.jpg" width="600"class="center" class="responsive" /></p>
+
+
+   <div id="parola">Caricamento nome...</div>
   </div>
 </div>
 
@@ -107,6 +117,11 @@
   aggiornaParola();
   setInterval(aggiornaParola, 1000);
 </script>
+
+    
+
+</div>
+</div>
 
 </body>
 </html>
