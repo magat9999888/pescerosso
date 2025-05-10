@@ -1,93 +1,95 @@
-<!DOCTYPE html>
-<html lang="it">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nome del pesce rosso</title>
-  <style>
-    body {
-      font-family: "Times New Roman", Times, serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 20px;
-      margin: 0;
-      background-color: #f5f5f5;
-      color: #333;
+  <style type="text/css">
+    a {
+      cursor: url("https://64.media.tumblr.com/36dcc744ff2bd1b60f4961129c5f8b44/tumblr_inline_qfkny01Usu1rb1m2f_500.png"), default;
     }
 
-    h1 {
-      font-weight: bold;
-      text-align: center;
-      font-size: 1.3em;
-      margin-bottom: 10px;
+    .sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 50%;
+      float: right;
+      margin-right: 1em;
+    }
+
+    .dida {
+      margin-left: 2em;
+      font-family: "Times New Roman", Times, serif;
     }
 
     img {
-      max-height: 40vh;
-      width: auto;
-      height: auto;
       display: block;
-      margin-bottom: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      margin-left: 2em;
     }
 
-    #parola {
-      font-size: 2em;
-      font-weight: bold;
-      margin-top: 10px;
+    .text {
+      margin-left: 15px;
+      color: black;
+      font-size: 12px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
     }
 
-    footer {
+    #parola {
+      font-family: "Times New Roman", Times, serif;
+      text-align: left;
+      font-size: 24px;
+      
       margin-top: 20px;
-      font-size: 0.9em;
-      color: #888;
-    }
-
-    @media screen and (max-width: 600px) {
-      img {
-        max-height: 30vh;
-        max-width: 90%;
-      }
-
-      #parola {
-        font-size: 1.5em;
-      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Non sapevamo come chiamare il pesce rosso e alla fine cambia nome ogni secondo</h1>
+<div class="row">
+  <div class="column">
 
-  <img src="https://64.media.tumblr.com/959802b6c07a6631729e97e06f38b257/tumblr_inline_sw1akjrnTt1rb1m2f_1280.jpg" alt="Pesce rosso">
+    <p class="sticky">
+      <a href="https://matteogatti.tumblr.com">back</a>
+    </p>
 
-  <div id="parola">Caricamento...</div>
+    <p class="dida"><strong>Non sapevamo come chiamare il pesce rosso e quindi alla fine cambia nome ogni secondo</strong></p>
 
-  <footer>Una nuova parola ogni secondo</footer>
 
-  <script>
-    const sillabeInizio = ["tra", "gra", "pro", "sca", "fro", "lu", "vi", "cla", "sta", "ri", "mi", "no", "fi", "gi", "pa", "re", "to", "co", "po"];
-    const sillabeMedio = ["la", "na", "ro", "ve", "ne", "ta", "li", "so", "fa", "mo", "ce", "do", "lo", "za", "chi", "gi", "fu", "cu"];
-    const finali = ["ino", "ello", "one", "etto", "are", "ile", "ato", "ano", "ese", "olo", "uto", "ace", "ondo", "esco", "osto"];
+    <p><img src="https://64.media.tumblr.com/959802b6c07a6631729e97e06f38b257/tumblr_inline_sw1akjrnTt1rb1m2f_1280.jpg" alt="Pesce rosso" width="800" class="center responsive" /></p>
 
-    function generaParola() {
-      let parola = sillabeInizio[Math.floor(Math.random() * sillabeInizio.length)];
-      if (Math.random() > 0.4) {
-        parola += sillabeMedio[Math.floor(Math.random() * sillabeMedio.length)];
-      }
-      parola += finali[Math.floor(Math.random() * finali.length)];
-      return parola.charAt(0).toUpperCase() + parola.slice(1);
+
+    <!-- Nome che cambia -->
+    <div id="parola">Caricamento nome...</div>
+
+  </div>
+</div>
+
+<script>
+  const sillabeInizio = ["tra", "gra", "pro", "sca", "fro", "lu", "vi", "cla", "sta", "ri", "mi", "no", "fi", "gi", "pa", "re", "to", "co", "po"];
+  const sillabeMedio = ["la", "na", "ro", "ve", "ne", "ta", "li", "so", "fa", "mo", "ce", "do", "lo", "za", "chi", "gi", "fu", "cu"];
+  const finali = ["ino", "ello", "one", "etto", "are", "ile", "ato", "ano", "ese", "olo", "uto", "ace", "ondo", "esco", "osto"];
+
+  function generaParola() {
+    let parola = sillabeInizio[Math.floor(Math.random() * sillabeInizio.length)];
+    if (Math.random() > 0.4) {
+      parola += sillabeMedio[Math.floor(Math.random() * sillabeMedio.length)];
     }
+    parola += finali[Math.floor(Math.random() * finali.length)];
+    return parola.charAt(0).toUpperCase() + parola.slice(1);
+  }
 
-    function aggiornaParola() {
-      document.getElementById("parola").textContent = generaParola();
-    }
+  function aggiornaParola() {
+    document.getElementById("parola").textContent = generaParola();
+  }
 
-    aggiornaParola();
-    setInterval(aggiornaParola, 1000);
-  </script>
+  aggiornaParola();
+  setInterval(aggiornaParola, 1000);
+</script>
+
 </body>
 </html>
