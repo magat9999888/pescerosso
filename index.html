@@ -3,8 +3,15 @@
 <html>
 <head>
   <style type="text/css">
+    body {
+      background-color: white;
+      color: black;
+      font-family: "Times New Roman", Times, serif;
+    }
+
     a {
       cursor: url("https://64.media.tumblr.com/36dcc744ff2bd1b60f4961129c5f8b44/tumblr_inline_qfkny01Usu1rb1m2f_500.png"), default;
+      color: black;
     }
 
     .sticky {
@@ -20,14 +27,11 @@
     }
 
     .text {
-      margin-left: 15px; 
-      color: black;
+      margin-left: 15px;
       font-size: 12px;
       position: absolute;
       top: 50%;
       left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       text-align: center;
     }
@@ -41,12 +45,11 @@
     }
 
     #parola {
-      font-family: "Times New Roman", Times, serif;
       text-align: left;
-      font-size: 16px;  /* Nome pesce più piccolo */
-      font-weight: normal; /* Non in grassetto */
+      font-size: 16px;
+      font-weight: normal;
       margin-top: 20px;
-      margin-left: 2em; /* Allineato a sinistra con l'immagine */
+      margin-left: 2em;
     }
   </style>
 </head>
@@ -54,31 +57,39 @@
 
 <div class="row">
   <div class="column">
-
     <p class="sticky">
       <a href="https://matteogatti.tumblr.com">back</a>
     </p>
 
-    <!-- Titolo allineato a sinistra con dimensione più piccola -->
     <p class="dida"><strong>Non sapevamo come chiamare il pesce rosso e quindi alla fine cambia nome ogni secondo</strong></p>
 
     <p><img src="https://64.media.tumblr.com/959802b6c07a6631729e97e06f38b257/tumblr_inline_sw1akjrnTt1rb1m2f_1280.jpg" alt="Pesce rosso" width="800" class="center responsive" /></p>
 
-    <!-- Nome del pesce che cambia ogni secondo, allineato con l'immagine -->
     <div id="parola">Caricamento nome...</div>
-
   </div>
 </div>
 
 <script>
-  // Aggiunto più sillabe per aumentare le combinazioni
-  const sillabeInizio = ["tra", "gra", "pro", "sca", "fro", "lu", "vi", "cla", "sta", "ri", "mi", "no", "fi", "gi", "pa", "re", "to", "co", "po", "lo", "fa", "ma", "zi", "bu", "ci", "te", "se", "be"];
-  const sillabeMedio = ["la", "na", "ro", "ve", "ne", "ta", "li", "so", "fa", "mo", "ce", "do", "lo", "za", "chi", "gi", "fu", "cu", "tu", "pe", "me", "te", "li", "ri", "si", "ve", "mo", "da"];
-  const finali = ["ino", "ello", "one", "etto", "are", "ile", "ato", "ano", "ese", "olo", "uto", "ace", "ondo", "esco", "osto", "ira", "ari", "ozo", "zino", "uno", "tau", "llo", "vola", "pia", "duro"];
+  const sillabeInizio = ["tra", "gra", "pro", "sca", "fro", "lu", "vi", "cla", "sta", "ri", "mi", "no", "fi", "gi", "pa", "re", "to", "co", "po", "ze", "dra", "blu", "sni", "plu"];
+  const sillabeMedio = ["la", "na", "ro", "ve", "ne", "ta", "li", "so", "fa", "mo", "ce", "do", "lo", "za", "chi", "gi", "fu", "cu", "ra", "bi", "ne", "tri"];
+  const finali = ["ino", "ello", "one", "etto", "are", "ile", "ato", "ano", "ese", "olo", "uto", "ace", "ondo", "esco", "osto", "iccio", "icco", "ullo"];
 
-  function generaParola() {
+  const dittatori = [
+    "Hitler", "Mussolini", "Stalin", "Mao", "Hussein", "Castro", "Franco", "Pinochet", "Ceausescu", "Kim",
+    "Amin", "Gaddafi", "Pol", "Mobutu", "Marcos", "Salazar", "Trujillo", "Duvalier", "Bokassa", "Park",
+    "Zia", "Noriega", "Chavez", "Al-Bashir", "Yahya", "Lukashenko", "Milosevic", "Putin", "Xi", "Orban",
+    "Erdogan", "Bolsonaro", "Assad", "Netanyahu", "Thaksin", "Obiang", "Mengistu", "Yanukovych", "Rhee", "Sukarno",
+    "Suharto", "Somoza", "Karimov", "Shevardnadze", "Bouteflika", "Hoxha", "Ben", "Peron", "Rios", "Batista",
+    "Tito", "Kenan", "Bainimarama", "Rajapaksa", "Saleh", "Isaias", "Mirziyoyev", "Kadyrov", "Bashir", "Aliyev",
+    "Tudjman", "Kasa-Vubu", "Daza", "Morales", "Ahmed", "Nguema", "Chamoun", "Macías", "Babangida", "Rawlings",
+    "Abacha", "Sani", "Deby", "Campore", "Nkrumah", "Taylor", "Doe", "Arce", "Ortega", "Bukele",
+    "Museveni", "Rajoelina", "Kagame", "Magufuli", "Niyazov", "Nazaryan", "Jammeh", "Coupé", "Sisi", "Zuma",
+    "Mugabe", "Biya", "Bazoum", "Gnassingbé", "Eyadéma", "Mahamat", "Sassou", "Traoré", "Goita", "Enver"
+  ];
+
+  function generaParolaInventata() {
     let parola = sillabeInizio[Math.floor(Math.random() * sillabeInizio.length)];
-    if (Math.random() > 0.4) {
+    if (Math.random() > 0.3) {
       parola += sillabeMedio[Math.floor(Math.random() * sillabeMedio.length)];
     }
     parola += finali[Math.floor(Math.random() * finali.length)];
@@ -86,7 +97,11 @@
   }
 
   function aggiornaParola() {
-    document.getElementById("parola").textContent = generaParola();
+    if (Math.random() < 0.1) {
+      document.getElementById("parola").textContent = dittatori[Math.floor(Math.random() * dittatori.length)];
+    } else {
+      document.getElementById("parola").textContent = generaParolaInventata();
+    }
   }
 
   aggiornaParola();
